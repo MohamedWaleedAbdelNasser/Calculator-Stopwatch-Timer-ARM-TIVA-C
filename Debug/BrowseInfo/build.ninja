@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\IAR\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\IAR\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\IAR\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\IAR\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\IAR\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\IAR\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\IAR\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\IAR\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\Buzzer.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\Buzzer.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\calculator.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\calculator.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\DIO.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\DIO.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\keypad.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\keypad.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\LCD.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\LCD.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\main.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\main.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\stopwatch.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\stopwatch.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Final$ embedded$ project$ Team$ 24\timer.c" -xcl_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.xcl" -macro_file "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\timer.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\Final$ embedded$ project$ Team$ 24\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I "D$:\tiva$ lib\tivaware_c_series_2_1_4_178\\" -Ol --predef_macros "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.tmp"
+  rspfile_name = D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.xcl.rsp
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\Buzzer.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\calculator.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\DIO.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\keypad.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\LCD.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\main.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\stopwatch.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.pbi : INDEXER D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.xcl |  $
+D$:\Final$ embedded$ project$ Team$ 24\timer.c
+  flags = "-out=D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.pbi" -f "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.xcl"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbw : MAKEBROWSE D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd
+  flags = "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd" -output "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbw"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi : PDBLINK D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.pbi |  $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.pbi $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.pbi
+  flags = -M "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Buzzer.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\calculator.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\DIO.pbi"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi : PDBLINK D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.pbi |  $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.pbi $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\keypad.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\LCD.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\main.pbi"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi : PDBLINK D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.pbi |  $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.pbi
+  flags = -M "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\stopwatch.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\timer.pbi"
+
+build D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd : PDBLINK D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi |  $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi $
+D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi
+  flags = -M "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi" "D$:\Final$ embedded$ project$ Team$ 24\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi"
+
